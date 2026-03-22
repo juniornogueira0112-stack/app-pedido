@@ -167,7 +167,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
-  
+
 const listaProdutos = [
   { codigo: "85", nome: "Vela 5F CX 24x8 (7898269580370)", preco: 15.0 },
   { codigo: "03", nome: "Vela N3 24x8 (7898269580011)", preco: 10.0 },
@@ -259,15 +259,18 @@ function renderProdutos() {
     <input type="checkbox" onchange="togglePreco(${i})"> Alterar preço
   </label><br>
 
+ <div style="display:flex; align-items:center; background:#f1f1f1; padding:5px 8px; border-radius:6px; width:120px; margin-top:4px;">
+  <span style="font-size:14px;">R$</span>
   <input 
     type="number" 
     id="preco_${i}" 
     value="${p.preco}" 
     step="0.01"
     disabled
-    style="width:100px; margin-top:4px;"
+    style="border:none; background:transparent; width:100%;"
     onchange="calcularTotal()"
   >
+</div>
 
   ${campoExtra}
 </div>
